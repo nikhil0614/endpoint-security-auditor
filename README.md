@@ -30,8 +30,8 @@ The results can be reviewed in the terminal and formatted into a professional PD
 ```
 endpoint-security-auditor/
 │
-├── auditor.sh              # Bash security audit script
-├── report_generator.py     # Python PDF report generator
+├── audit.sh                # Bash security audit script
+├── generate_report.py      # Python PDF report generator
 ├── audit_report.pdf        # Generated report (after execution)
 └── README.md
 ```
@@ -116,13 +116,13 @@ pip install fpdf
 Make the script executable:
 
 ```bash
-chmod +x auditor.sh
+chmod +x audit.sh
 ```
 
 Run the script with root privileges:
 
 ```bash
-sudo ./auditor.sh
+sudo ./audit.sh
 ```
 
 This will display audit findings in the terminal.
@@ -134,7 +134,7 @@ This will display audit findings in the terminal.
 Run:
 
 ```bash
-python3 report_generator.py
+python3 generate_report.py
 ```
 
 This will generate:
@@ -219,5 +219,6 @@ This project demonstrates:
 ---
 
 ## 👨‍💻 Author
+
 
 Developed by cybersecurity and ethical hacking club sac
