@@ -1,0 +1,25 @@
+Remediation Handbook:
+
+1. Root Login Disabled:
+   - To disable root login via SSH, add the following line to /etc/ssh/sshd_config:
+     PermitRootLogin no
+   - Then restart the SSH service: 
+     systemctl restart sshd
+
+2. No World-Writable Files:
+   - To fix world-writable files, use the following command:
+     chmod o-w <file_name>
+   - Ensure that critical system files are not world-writable.
+
+3. Sudoers File Misuse:
+   - Review the sudoers file and remove unnecessary sudo privileges:
+     visudo
+
+4. Kernel Parameters:
+   - Ensure core dumps are disabled by running:
+     sysctl -w kernel.core_pattern=/dev/null
+
+5. Failed Login Attempts:
+   - Investigate failed login attempts in /var/log/auth.log:
+     grep 'Failed password' /var/log/auth.log
+   - If you suspect malicious activity, review logs and consider changing passwords.

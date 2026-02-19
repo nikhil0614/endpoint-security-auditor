@@ -1,0 +1,25 @@
+rules:
+  - check_name: "Root Login Disabled"
+    description: "Ensure root login is disabled via SSH."
+    command: "grep 'PermitRootLogin' /etc/ssh/sshd_config"
+    expected_result: "PermitRootLogin no"
+  
+  - check_name: "No World-Writable Files"
+    description: "Ensure no important files are world-writable."
+    command: "find / -type f -perm -0002"
+    expected_result: "No world-writable files found"
+  
+  - check_name: "Sudoers File Misuse"
+    description: "Check for unnecessary sudo privileges."
+    command: "grep -v '^#' /etc/sudoers"
+    expected_result: "No unnecessary sudoers entries"
+  
+  - check_name: "Kernel Parameters"
+    description: "Ensure core dumps are disabled."
+    command: "sysctl -a | grep core_pattern"
+    expected_result: "core_pattern = /dev/null"
+  
+  - check_name: "Failed Login Attempts"
+    description: "Ensure there are no failed login attempts."
+    command: "grep 'Failed password' /var/log/auth.log"
+    expected_result: "No failed login attempts"
