@@ -220,11 +220,4 @@ This project demonstrates:
 
 ## 👨‍💻 Author
 
-Developed as a cybersecurity learning and portfolio project.
-
----
-
-## 📜 License
-
-This project is for educational and research purposes only.
-Use responsibly and only on systems you are authorized to test.
+Developed by cybersecurity and ethical hacking club sac
